@@ -1,0 +1,13 @@
+rating.text = random_word['up_votes'] || 0
+self.text = random_word['up_votes'] || 0
+self.text = $random_word['up_votes'] || 0
+$random_word['up_votes']
+$random_word['up_votes'] || 0
+self.text = $random_word['up_votes'] || 0
+$random_word['up_votes'] == nil
+self.text = 0
+self.text = "0"
+exit
+exit
+exit
+exit

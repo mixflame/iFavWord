@@ -7,7 +7,7 @@ Bundler.require(:RubyMotion)
 
 Motion::Project::App.setup do |app|
   app.name = 'iFavWord'
-  app.device_family = [:iphone] # :ipad,
+  app.device_family = [:ipad, :iphone]
   app.interface_orientations = [:portrait, :landscape_right, :landscape_left]
   app.identifier = 'com.jonsoft.ifavword'
 
@@ -30,7 +30,7 @@ Motion::Project::App.setup do |app|
   # app.provisioning_profile = "/Users/jsilverman2/Library/MobileDevice/Provisioning Profiles/60F7EEB6-6E11-4713-9039-839CDBB930D4.mobileprovision"
   # app.codesign_certificate = "iPhone Distribution: Jonathan Silverman"
 
-  # app.icons = ['icon_iphone.png', 'icon_ipad.png', 'icon_iphone_retina.png', 'icon_ipad_retina.png']
+  app.icons = ['icon_iphone.png', 'icon_ipad.png', 'icon_iphone_retina.png', 'icon_ipad_retina.png']
   app.prerendered_icon = true
 
   app.frameworks += ['iAd']
