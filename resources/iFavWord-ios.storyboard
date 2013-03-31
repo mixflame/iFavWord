@@ -33,6 +33,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitWord:" destination="9Wf-Qa-wCZ" eventType="touchUpInside" id="CkW-ry-NTy"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D3F-L0-FwM">
                                 <constraints>
@@ -40,6 +43,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9Wf-Qa-wCZ" id="iCA-vT-Ez7"/>
+                                </connections>
                             </textField>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="KBV-sS-4ag">
                                 <constraints>
@@ -75,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="96" y="6"/>
         </scene>
-        <!--Vote Controller-->
+        <!--Random Word Controller-->
         <scene sceneID="HCq-Q2-46i">
             <objects>
-                <viewController id="uua-yE-3Tx" customClass="VoteController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RandWord" id="uua-yE-3Tx" customClass="RandomWordController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ova-JM-G2T">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -108,6 +114,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="voteUp:" destination="uua-yE-3Tx" eventType="touchUpInside" id="uzp-hA-diL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ6-WI-YrM">
                                 <constraints>
@@ -121,6 +130,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="voteDown:" destination="uua-yE-3Tx" eventType="touchUpInside" id="ift-1c-veU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4j1-w3-5I5">
                                 <constraints>
@@ -134,32 +146,49 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="wordOfTheDay:" destination="uua-yE-3Tx" eventType="touchUpInside" id="mk0-Ba-Wl1"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MO-Vv-Xov">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="q5p-Je-G2w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="i6N-U5-lee" firstAttribute="top" secondItem="Ova-JM-G2T" secondAttribute="top" constant="20" symbolic="YES" type="default" id="5pE-BY-A3Z"/>
+                            <constraint firstItem="5MO-Vv-Xov" firstAttribute="leading" secondItem="Ova-JM-G2T" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6zA-b2-0tY"/>
+                            <constraint firstItem="TZ6-WI-YrM" firstAttribute="top" secondItem="Ova-JM-G2T" secondAttribute="top" constant="252" id="9gQ-Ui-Ajh"/>
                             <constraint firstItem="6M3-Hg-vWt" firstAttribute="top" secondItem="Ova-JM-G2T" secondAttribute="top" constant="75" id="B9S-aT-dei"/>
-                            <constraint firstAttribute="bottom" secondItem="4j1-w3-5I5" secondAttribute="bottom" constant="156" id="EbL-a2-Tn8"/>
-                            <constraint firstItem="lnV-AD-l6i" firstAttribute="top" secondItem="Ova-JM-G2T" secondAttribute="top" constant="252" id="Qam-3R-fZP"/>
+                            <constraint firstItem="TZ6-WI-YrM" firstAttribute="leading" secondItem="Ova-JM-G2T" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="CiX-LW-nzc"/>
+                            <constraint firstAttribute="bottom" secondItem="4j1-w3-5I5" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="CpT-vS-yUZ"/>
                             <constraint firstItem="TZ6-WI-YrM" firstAttribute="baseline" secondItem="lnV-AD-l6i" secondAttribute="baseline" type="default" id="WA9-vJ-jeI"/>
                             <constraint firstItem="4j1-w3-5I5" firstAttribute="centerX" secondItem="6M3-Hg-vWt" secondAttribute="centerX" type="default" id="WDo-NI-XDy"/>
+                            <constraint firstItem="5MO-Vv-Xov" firstAttribute="top" secondItem="6M3-Hg-vWt" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="aGZ-Ip-HQn"/>
                             <constraint firstItem="6M3-Hg-vWt" firstAttribute="centerX" secondItem="i6N-U5-lee" secondAttribute="centerX" type="default" id="cWA-Tr-zni"/>
                             <constraint firstItem="6M3-Hg-vWt" firstAttribute="leading" secondItem="Ova-JM-G2T" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="frj-Qp-eqO"/>
+                            <constraint firstAttribute="trailing" secondItem="lnV-AD-l6i" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="gMM-kt-LZR"/>
                             <constraint firstAttribute="trailing" secondItem="6M3-Hg-vWt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="l1G-cD-t88"/>
-                            <constraint firstAttribute="trailing" secondItem="TZ6-WI-YrM" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rrX-0z-CxB"/>
-                            <constraint firstItem="lnV-AD-l6i" firstAttribute="leading" secondItem="Ova-JM-G2T" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sTN-nM-JVu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="random_word" destination="6M3-Hg-vWt" id="G99-cm-td1"/>
+                        <outlet property="rating" destination="5MO-Vv-Xov" id="3qu-IX-FTZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYc-p7-BFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="433" y="5"/>
         </scene>
-        <!--View Controller-->
+        <!--Wotd Controller-->
         <scene sceneID="vEs-xs-fuG">
             <objects>
-                <viewController id="V8B-sn-QYD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WordOfTheDay" id="V8B-sn-QYD" customClass="WotdController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o4N-k4-4F6">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -192,6 +221,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="goBack:" destination="V8B-sn-QYD" eventType="touchUpInside" id="WjS-fm-LfS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -204,6 +236,9 @@
                             <constraint firstItem="BQ0-hR-DOM" firstAttribute="leading" secondItem="o4N-k4-4F6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rgQ-Gz-hPa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="wotd" destination="G0l-Z3-1jD" id="MeZ-Wa-Sbn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ziM-Zk-Qi5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -215,13 +250,27 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FavWordController.h"/>
             <relationships>
                 <relationship kind="action" name="bannerViewDidLoadAd:"/>
+                <relationship kind="action" name="submitWord:"/>
+                <relationship kind="action" name="textFieldShouldReturn:"/>
                 <relationship kind="outlet" name="word" candidateClass="UITextField"/>
             </relationships>
         </class>
-        <class className="NSLayoutConstraint">
+        <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
             <relationships>
                 <relationship kind="action" name="to_s"/>
+            </relationships>
+        </class>
+        <class className="RandomWordController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RandomWordController.h"/>
+            <relationships>
+                <relationship kind="action" name="textFieldShouldReturn:"/>
+                <relationship kind="action" name="viewDidAppear:"/>
+                <relationship kind="action" name="voteDown:"/>
+                <relationship kind="action" name="voteUp:"/>
+                <relationship kind="action" name="wordOfTheDay:"/>
+                <relationship kind="outlet" name="random_word" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rating" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="UIButton">
@@ -280,6 +329,14 @@
                 <relationship kind="action" name="pop"/>
                 <relationship kind="action" name="push:"/>
                 <relationship kind="action" name="to_s"/>
+            </relationships>
+        </class>
+        <class className="WotdController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WotdController.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="action" name="viewDidAppear:"/>
+                <relationship kind="outlet" name="wotd" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
